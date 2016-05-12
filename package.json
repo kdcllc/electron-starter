@@ -1,7 +1,7 @@
 {
   "name": "electron-start",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A minimal Electron Application without any frameworks",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js"
@@ -13,7 +13,7 @@
   "keywords": [
     "Electron",
     "seed",
-    "start",
+    "start"
   ],
   "author": "King David Consulting LLC",
   "license": "MIT",
