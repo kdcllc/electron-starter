@@ -1,0 +1,36 @@
+div(id = "chapter-nav")
+    h4(style = "text-align:center") Chapters
+    ul
+        li
+            a(href="#", id="01-genesis-1" class="chapter-link") Genesis 1
+        li
+            a(href="#", id="02-isaiah-53" class="chapter-link") Isaiah 53    
+            
+        li
+            a(href="#", id="03-john-1" class="chapter-link")  John 1    
+
+div(id="chapter")
+    h2(id="title")
+    p(id="content")
+    
+
+script.
+    var app = require("./lib/app");
+    var showChapter = function(id){
+        app.emit("chapter-selected",id);
+    };
+    
+    app.on("chapter-rendered",function(chapter){
+        $("#title").html(chapter.title);
+        $("#content").html(chapter.body);
+    });
+    
+    $(function(){
+       showChapter("01-genesis-1");
+       $(".chapter-link").on("click", function(ev){
+           ev.preventDefault();
+           showChapter(this.id);
+       }) 
+    });
+    
+    
