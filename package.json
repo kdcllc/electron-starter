@@ -1,5 +1,5 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-start",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
@@ -8,26 +8,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron/electron-quick-start.git"
+    "url": "git+https://github.com/kdcllc/electron-start.git"
   },
   "keywords": [
     "Electron",
-    "quick",
+    "seed",
     "start",
-    "tutorial"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "King David Consulting LLC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron/electron-quick-start/issues"
+    "url": "https://github.com/kdcllc/electron-starter.git/issues"
   },
-  "homepage": "https://github.com/electron/electron-quick-start#readme",
+  "homepage": "https://github.com/kdcllc/electron-starter#readme",
   "devDependencies": {
     "electron-prebuilt": "^1.0.1"
   },
   "dependencies": {
     "electron-reload": "^0.3.0",
-    "handlebars": "^4.0.5",
+    "jade": "^1.11.0",
     "jquery": "^2.2.3",
     "underscore": "^1.8.3"
   }
