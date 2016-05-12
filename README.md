@@ -3,6 +3,8 @@
 ## Special precautions for Windows
 As installer [NSIS](http://nsis.sourceforge.net/Main_Page) is used. You have to install it (version 3.0), and add NSIS folder to PATH in Environment Variables, so it is reachable to scripts in this project (path should look something like `C:/Program Files (x86)/NSIS`).
 
+## Phi ration
+0.618
 # License
 
 The MIT License (MIT)
