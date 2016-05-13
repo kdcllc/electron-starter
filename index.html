@@ -53,6 +53,13 @@ var wireEvents = function(){
         })
         console.log(sourceFile);
     });
+    
+    $("#main a").not(".internal").on("click", function(ev){
+      ev.preventDefault();
+      var url = $(this).attr("href");
+      var {shell} = require('electron');
+      shell.openExternal(url);
+    });
 }
 
 </script>
