@@ -5,6 +5,19 @@ As installer [NSIS](http://nsis.sourceforge.net/Main_Page) is used. You have to 
 
 ## Phi ration
 0.618
+
+##Other notes
+
+Install Electron via 
+```
+npm install -g electron-prebuilt.
+
+```
+electron yo generator
+```
+npm install --global yo generator-electron
+```
+
 # License
 
 The MIT License (MIT)
