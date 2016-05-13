@@ -6,32 +6,55 @@
   <title>Electron app starter</title>
   <link rel="stylesheet" href="./css/app.css">
   <link rel="stylesheet" href="./css/font-awesome.min.css">
-  <script>var $ = JQuery = require("jquery");</script>
+  <script>
+    var $ = JQuery = require("jquery");
+  </script>
 </head>
 
 <body>
   <div id="wrapper">
-      <div id="side-nav">
-        <ul>
-          <li><a href="#" id="home" class="nav"><i class="fa fa-home"></i></a></li>
-          <li><a href="#" id="chapters" class="nav"><i class="fa fa-list"></i></a></li>
-          <li><a href="#" id="search" class="nav"><i class="fa fa-search"></i></a></li>
-        </ul>
-      </div>
-      <div id="top-bar">
-        <a href="#"><i class="fa fa-user"></i></a>
-      </div>
-      <div id="main">
-        
-      </div>
+    <div id="side-nav">
+      <ul>
+        <li><a href="#" id="home" class="nav"><i class="fa fa-home"></i></a></li>
+        <li><a href="#" id="chapters" class="nav"><i class="fa fa-list"></i></a></li>
+        <li><a href="#" id="search" class="nav"><i class="fa fa-search"></i></a></li>
+      </ul>
     </div>
-    
+    <div id="top-bar">
+      <a href="#"><i class="fa fa-user"></i></a>
+    </div>
+    <div id="main">
+
+    </div>
+  </div>
+
 </body>
 
 <script>
-  // You can also require other files to run in this process
-  require('./renderer.js')
-   
+// You can also require other files to run in this process
+require('./renderer.js')
+ 
+var fs = require("fs-extra");
+var path = require("path");
+var remote = require("electron").remote; //talk to main processes thru remote
+var dialog = require('electron').remote.dialog;  
+
+//global application events i.e. local evets in chapters.jade
+var wireEvents = function(){
+     $(".downloadable").on("click", function(ev){
+        var sourceFile = $(ev.currentTarget).data("video");
+        dialog.showSaveDialog({defaultPath: sourceFile}, function(fileName){
+          if(fileName){
+            //locate our dowload on disk
+            var source = path.join(__dirname, "downloads", sourceFile);
+            //copy it over
+            fs.copySync(source, fileName);
+          }
+        })
+        console.log(sourceFile);
+    });
+}
+
 </script>
 
 </html>

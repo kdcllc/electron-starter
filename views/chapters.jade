@@ -8,6 +8,8 @@ div(id = "chapter-nav")
             
         li
             a(href="#", id="03-john-1" class="chapter-link")  John 1    
+        li
+            a(href="#", id="04-creation-account" class="chapter-link")  Creation Account  
 
 div(id="chapter")
     h2(id="title")
@@ -23,6 +25,8 @@ script.
     app.on("chapter-rendered",function(chapter){
         $("#title").html(chapter.title);
         $("#content").html(chapter.body);
+        wireEvents();
+        //console.log(chapter);
     });
     
     $(function(){
